@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/aofattaporn/go-cobra/configs"
+	"github.com/goproject/configs"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )

@@ -1,9 +1,10 @@
 package server
 
 import (
-	"github.com/aofattaporn/go-cobra/internal/handlers"
-	"github.com/aofattaporn/go-cobra/internal/middlewares"
 	"github.com/gofiber/fiber/v2"
+	"github.com/goproject/internal/constants"
+	"github.com/goproject/internal/handlers"
+	"github.com/goproject/internal/middlewares"
 )
 
 type IModuleFactory interface {

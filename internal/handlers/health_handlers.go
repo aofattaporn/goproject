@@ -1,8 +1,9 @@
 package handlers
 
 import (
-	"github.com/aofattaporn/go-cobra/configs"
 	"github.com/gofiber/fiber/v2"
+	"github.com/goproject/configs"
+	"github.com/goproject/internal/entities"
 )
 
 type IHealthHandler interface {
@@ -21,7 +22,7 @@ func HealthCheckHandler(cfg configs.IAppConfig) IHealthHandler {
 
 func (h *healthHandler) HeathCheckHandler(c *fiber.Ctx) error {
 	return c.JSON(&entities.Response{
-		Code: "0",
+		Code: 1000,
 		Data: &entities.HealthResponse{
 			Name:    h.cfg.Name(),
 			Version: h.cfg.Version(),

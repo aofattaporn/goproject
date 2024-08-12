@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/aofattaporn/go-cobra/configs"
+	"github.com/goproject/configs"
 	"github.com/spf13/cobra"
 )
 

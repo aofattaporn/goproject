@@ -1,4 +1,4 @@
-module github.com/aofattaporn/go-cobra
+module github.com/goproject
 
 go 1.21.0
 

@@ -1,16 +1,20 @@
 package middlewares
 
 import (
-\	"encoding/json"
+	"encoding/json"
 	"fmt"
 	"net/http"
 	"runtime/debug"
 	"strings"
 	"time"
 
-	"github.com/aofattaporn/go-cobra/configs"
+	"github.com/goproject/pkg/log"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
+	"github.com/goproject/configs"
+	"github.com/goproject/internal/constants"
+	"github.com/goproject/internal/entities"
 )
 
 type IMiddlewaresHandler interface {
@@ -47,7 +51,7 @@ func (h *middlewaresHandler) Cors() fiber.Handler {
 func (h *middlewaresHandler) RouterNotFound() fiber.Handler {
 	return func(c *fiber.Ctx) error {
 		return c.Status(404).JSON(&entities.Response{
-			Code: custom_errors.NOT_FOUND_ERROR,
+			Code: 404,
 			Data: nil,
 		})
 	}

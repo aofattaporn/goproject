@@ -7,11 +7,11 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/aofattaporn/go-cobra/configs"
-	"github.com/aofattaporn/go-cobra/internal/middlewares"
-	"github.com/aofattaporn/go-cobra/pkg/database"
-	"github.com/aofattaporn/go-cobra/pkg/log"
 	"github.com/gofiber/fiber/v2"
+	"github.com/goproject/configs"
+	"github.com/goproject/internal/middlewares"
+	"github.com/goproject/pkg/database"
+	"github.com/goproject/pkg/log"
 )
 
 type IServer interface {
@@ -60,11 +60,6 @@ func (s *fiberServer) Start() {
 	mid := InitMiddlewares(s)
 	s.app.Use(mid.Cors())
 	s.app.Use(mid.Logger())
-	s.app.Use(recover.New(recover.Config{
-		Next:              nil,
-		EnableStackTrace:  true,
-		StackTraceHandler: mid.Recover(),
-	}))
 
 	router := s.app.Group(s.cfg.App().ContextPath())
 	modules := InitModule(router, s, mid)

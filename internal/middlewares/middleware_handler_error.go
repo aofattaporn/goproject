@@ -1,9 +1,10 @@
 package middlewares
 
 import (
-	"dwpr-ci-batch/pkg/log"
+	"github.com/goproject/pkg/log"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/goproject/internal/entities"
 )
 
 func MappingError(logger log.ILogger) fiber.ErrorHandler {
