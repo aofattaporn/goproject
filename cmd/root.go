@@ -10,8 +10,8 @@ import (
 var (
 	configFile string
 	rootCmd    = &cobra.Command{
-		Use:   "dwpr-ci-batch",
-		Short: "dwpr-ci-batch",
+		Use:   "goproject-ci-batch",
+		Short: "goproject-ci-batch",
 	}
 )
 

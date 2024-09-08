@@ -104,7 +104,7 @@ func (h *middlewaresHandler) Logger() fiber.Handler {
 }
 
 func (h *middlewaresHandler) Recover() func(c *fiber.Ctx, e interface{}) {
-	return func(c *fiber.Ctx, e interface{}) {
+	return func(_ *fiber.Ctx, e interface{}) {
 		h.logger.Errorf("recover error : %v ,\n%s", e, debug.Stack())
 	}
 }
